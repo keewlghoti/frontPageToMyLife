@@ -1,0 +1,24 @@
+{
+  "name": "frontpagetomylife",
+  "version": "1.0.0",
+  "description": "Webpage for hosting stuff",
+  "main": "index.js",
+  "dependencies": {
+    "degit": "^2.8.4",
+    "rollup": "^2.77.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "fart_command"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keewlghoti/frontPageToMyLife.git"
+  },
+  "author": "keewlghoti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keewlghoti/frontPageToMyLife/issues"
+  },
+  "homepage": "https://github.com/keewlghoti/frontPageToMyLife#readme"
+}
