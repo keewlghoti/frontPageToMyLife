@@ -45,11 +45,13 @@ rollup- `https://rollupjs.org/guide/en/#creating-your-first-bundle`
 rollup config sets main.js as file that runs.
 
 #### Installing svelte
+Started app via `Vite` addon
+```
+npm create vite@latest my-app -- --template svelte
+```
 
 
 --Deprecrated-- 
-
-
 I ran this command to clone the template:
 ```
 npx degit sveltejs/template front_page
