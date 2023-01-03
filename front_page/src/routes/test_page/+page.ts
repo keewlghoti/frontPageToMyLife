@@ -2,6 +2,6 @@
 /** @type {import ('./$types').PageLoad} */
 export function load(){
     return{
-        message: "fart"
+        message: "<<< this is a preloaded value >>>"
     };
 }

@@ -17,10 +17,7 @@
         <p>
             The <a href="https://github.com/keewlghoti/frontPageToMyLife">Github</a> 
         </p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/kweel_bomberman">KB_Bomberman</a>
-        </nav>
+
     </section>
 </main>
 
