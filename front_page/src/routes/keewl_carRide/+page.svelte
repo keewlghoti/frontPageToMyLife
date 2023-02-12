@@ -38,15 +38,16 @@
         // starting the loop
         let frame = requestAnimationFrame(loop);
 
-        //drawing static elements
-        background(canvas, ctx);
-        horizon(canvas, ctx);
-
+        
         //loop for frame
         function loop(){
+            //drawing static elements
+            
             const movement = 1
-            moving_square(canvas,ctx,movement,frame_placement)
             frame = requestAnimationFrame(loop);
+            background(canvas, ctx);
+            horizon(canvas, ctx);
+            moving_square(canvas,ctx,movement,frame_placement)
             frame_placement += 1;
 
 

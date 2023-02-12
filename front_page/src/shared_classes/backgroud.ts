@@ -1,5 +1,5 @@
 
-let background = function(canvas:HTMLCanvasElement, ctx: CanvasRenderingContext2D){
+let background = function(canvas:HTMLCanvasElement, ctx: CanvasRenderingContext2D | null){
 
     // set background to black
     ctx.fillStyle = 'black';

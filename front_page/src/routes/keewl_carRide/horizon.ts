@@ -1,5 +1,5 @@
 
-let horizon = function(canvas:HTMLCanvasElement, ctx: CanvasRenderingContext2D){
+let horizon = function(canvas:HTMLCanvasElement, ctx: CanvasRenderingContext2D | null){
     /**
      * Horizon draws a line accross the screen
      */
