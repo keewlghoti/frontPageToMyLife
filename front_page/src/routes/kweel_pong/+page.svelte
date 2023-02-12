@@ -32,21 +32,21 @@
             p1y = e.clientY - 230;
         });
         // Background
-        cc.fillStyle = 'black';
-        cc.fillRect(0, 0, c.width, c.height);
-                // Ball
-                cc.fillStyle = 'firebrick';
-        cc.fillRect(ballx-bd/2, bally-bd/2, bd, bd);
-        // Paddle 1
-        cc.fillStyle = 'cyan';
-        cc.fillRect(0, p1y, pthick, pheight);
-        // Score 1
-        cc.fillText(score1, 100, 50);
-        // Paddle 2
-        cc.fillStyle = 'lime';
-        cc.fillRect(c.width-pthick, p2y, pthick, pheight);
-        // Score 2
-        cc.fillText(score2, c.width-100, 50);
+        // cc.fillStyle = 'black';
+        // cc.fillRect(0, 0, c.width, c.height);
+        // // Ball
+        // cc.fillStyle = 'firebrick';
+        // cc.fillRect(ballx-bd/2, bally-bd/2, bd, bd);
+        // // Paddle 1
+        // cc.fillStyle = 'cyan';
+        // cc.fillRect(0, p1y, pthick, pheight);
+        // // Score 1
+        // cc.fillText(score1, 100, 50);
+        // // Paddle 2
+        // cc.fillStyle = 'lime';
+        // cc.fillRect(c.width-pthick, p2y, pthick, pheight);
+        // // Score 2
+        // cc.fillText(score2, c.width-100, 50);
 
         function reset() {
             ballx = c.width/2;
@@ -97,8 +97,8 @@
             // Background
             cc.fillStyle = 'black';
             cc.fillRect(0, 0, c.width, c.height);
-                    // Ball
-                    cc.fillStyle = 'firebrick';
+            // Ball
+            cc.fillStyle = 'firebrick';
             cc.fillRect(ballx-bd/2, bally-bd/2, bd, bd);
             // Paddle 1
             cc.fillStyle = 'cyan';

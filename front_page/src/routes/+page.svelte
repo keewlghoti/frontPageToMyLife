@@ -4,7 +4,7 @@
         <h1>Website</h1>
     </header>
     <section>
-        <img src="/stare_websiteOpener.png" width="100%" alt=""/>
+        <img src="/stare_websiteOpener.png" width="100%" alt="(o)_(o)"/>
     </section>
     <section>
         <h1>Keewlghoti's Front Page</h1>
