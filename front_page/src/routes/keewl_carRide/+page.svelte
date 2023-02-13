@@ -43,7 +43,7 @@
         let frame = requestAnimationFrame(loop);
 
         // setting constants
-        const square_placement_movement_line_y = canvas.height *.66 + 3;
+        const square_placement_movement_line_y = canvas.height *.66 + 6;
 
         //loop for frame
         function loop(){
@@ -66,20 +66,24 @@
             // STEP: Move all squares
             for (let index = 0; index < square_list.length; index++) {
                 let square = square_list[index];
-                move_square(ctx, square)
-                if((square.tl_x + square.size_x) <= 0){
-                    square_list.splice(index, 1)
-                }
+                move_square(ctx, square);
             }
-            //console.log(square_list)
-
+            
             // STEP: Clean square_list of any squares
-            square_list = square_list.filter(square => (square.tl_x + square.size_x) >> 0)
+            for (let index = 0; index < square_list.length; index++) {
+                let square = square_list[index];
+                if((square.tl_x + square.size_x) <= 0){
+                    square_list.splice(index, 1);
+                };
+            };
+            
+        //}
+           // square_list = square_list.filter(square => (square.tl_x + square.size_x) >> 0)
 
-        } return () => {
-            cancelAnimationFrame(frame)
-        }
+    } return () => {
+        cancelAnimationFrame(frame)
+    }
         
-    })
+})
 
 </script>
