@@ -41,7 +41,7 @@
         
         function loop(){
             frame = requestAnimationFrame(loop);
-            var square = new Draw_Square(canvas, size);
+            var square = new Draw_Square(canvas, 1, 1, size);
             // var cirle = new Draw_Circle(canvas.width, canvas.height, size, ctx);
             square.random_placement()
             ctx.fillStyle = square.color;

@@ -27,10 +27,14 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { horizon } from "./horizon"
-    import { moving_square } from "./movement";
+    import { move_square } from "./movement";
     import {background} from "../../shared_classes/backgroud"
+    import { element } from "svelte/internal";
+    import { Draw_Square } from "../../shared_classes/shape_gen";
     let canvas: HTMLCanvasElement;
     var frame_placement = 1;
+
+    var square_list = [];
 
     onMount(() =>{
         const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
@@ -38,18 +42,39 @@
         // starting the loop
         let frame = requestAnimationFrame(loop);
 
-        
+        // setting constants
+        const square_placement_movement_line_y = canvas.height *.66 + 3;
+
         //loop for frame
         function loop(){
-            //drawing static elements
-            
-            const movement = 1
             frame = requestAnimationFrame(loop);
+            // STEP: drawing static elements
             background(canvas, ctx);
-            horizon(canvas, ctx);
-            moving_square(canvas,ctx,movement,frame_placement)
-            frame_placement += 1;
+            horizon(canvas, ctx, square_placement_movement_line_y);
+            // STEP: fill square_list
+            if(square_list.length <= 4){
+                var size = Math.floor(Math.random()*200)
+                let square = new Draw_Square(
+                                        canvas,
+                                        canvas.width,
+                                        square_placement_movement_line_y - size,
+                                        size
+                                        );
+                square.randomize_movement()
+                square_list.push(square);
+            }
+            // STEP: Move all squares
+            for (let index = 0; index < square_list.length; index++) {
+                let square = square_list[index];
+                move_square(ctx, square)
+                if((square.tl_x + square.size_x) <= 0){
+                    square_list.splice(index, 1)
+                }
+            }
+            //console.log(square_list)
 
+            // STEP: Clean square_list of any squares
+            square_list = square_list.filter(square => (square.tl_x + square.size_x) >> 0)
 
         } return () => {
             cancelAnimationFrame(frame)

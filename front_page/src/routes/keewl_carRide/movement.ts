@@ -4,25 +4,18 @@ import {Draw_Square} from "../../shared_classes/shape_gen"
 
 
 
-let moving_square = function(canvas:HTMLCanvasElement, ctx: CanvasRenderingContext2D, movement: number, frame_placement: number){
-    
-    const line_x = canvas.height * (2/3);
-    const size_x = 190;
-    const size_y = 6;
-
-    // ctx.strokeStyle = "green";
-    // ctx.lineWidth = 5;
-    // ctx.strokeRect(placement_x, line_x - 5 - size_y, size_x, size_y)
-    let square = new Draw_Square(canvas, 7);
-    square.tl_x = canvas.width
-    square.tl_y = canvas.height * .66;
+let move_square = function(
+        ctx: CanvasRenderingContext2D | null,
+        square: Draw_Square,
+    ){
     ctx.fillStyle = square.color;
+    square.update_movement_x()
     ctx.fillRect(
-        square.tl_x - (movement * frame_placement),
-        square.tl_y - 3,
-        size_x,
-        size_y)
-
-
+        square.tl_x,
+        square.tl_y,
+        square.size_x,
+        square.size_y)
+    square.update_frame_placement()
 }
-export {moving_square}
+
+export {move_square}
